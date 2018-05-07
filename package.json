@@ -1,7 +1,7 @@
 {
   "name": "transform-path-ext",
   "scope": "beatthat",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "ext methods for retrieving a Transform's path, which is often useful for debugging, e.g. myComp.Path() // returns '/root/mycompparent/mycomp.",
   "main": "index.js",
   "repository": {
