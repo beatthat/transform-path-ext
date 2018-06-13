@@ -1,12 +1,13 @@
-using UnityEngine;
 using System.Text;
+using BeatThat.Pools;
+using UnityEngine;
 
-namespace BeatThat
+namespace BeatThat.TransformPathExt
 {
-	/// <summary>
-	/// ext methods for retrieving a Transform's path, which is often useful for debugging, e.g. myComp.Path() // returns '/root/mycompparent/mycomp'
-	/// </summary>
-	public static class TransformPathExt
+    /// <summary>
+    /// ext methods for retrieving a Transform's path, which is often useful for debugging, e.g. myComp.Path() // returns '/root/mycompparent/mycomp'
+    /// </summary>
+    public static class Ext
 	{
 		/// <summary>
 		/// Gets the path for a Transform from the root, e.g. '/root/parent/mytransform'
@@ -109,3 +110,5 @@ namespace BeatThat
 
 	}
 }
+
+
