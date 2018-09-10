@@ -1,42 +1,28 @@
-# TEMPLATE
-
-...
-
-## Usage
-
-See the tests in the `Editor/` folder for each class for usage examples.
+Helps you debug which GameObject is the source of a problem or behavior, by generating the full path to the GameObject.
 
 ## Install
 
 From your unity project folder:
 
-    npm init
-    npm install TEMPLATE --save
-    echo Assets/packages >> .gitignore
-    echo Assets/packages.meta >> .gitignore
+    npm init --force # only if you don't yet have a package.json file
+    npm install --save beatthat/transform-path-ext
 
-The package and all its dependencies will be installed in
-your Assets/packages folder.
+The package and all its dependencies will be installed under Assets/Plugins/packages.
 
-## Development
+In case it helps, a quick video of the above: https://youtu.be/Uss_yOiLNw8
 
-Setup and run tests:
+## Usage
 
-    npm install
-    npm install ..
-    cd test
-    npm install
-    gulp
+...log the full scene path of a component:
 
-Remember that changes made to the test folder are not saved to the package
-unless they are copied back into the source folder.
-
-To reinstall the files from the src folder, run `npm install ..` again.
-
-### Tests
-
-All tests are wrapped in `#if ...` blocks to prevent test spam.
-
-You can enable tests in: Player settings > Other Settings > Scripting Define Symbols
-
-The test key for this package is: TEMPLATE_TESTS
+```csharp
+using BeatThat.TransformPathExt;
+public class Foo : MonoBehaviour
+{
+  void OnEnable()
+  {
+    Debug.Log("[" + this.Path() + "] is enabled");
+    // the above will log /path/from/root/to/this/component's/gameobject
+  }
+}
+```
