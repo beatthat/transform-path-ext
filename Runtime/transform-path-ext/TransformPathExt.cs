@@ -14,6 +14,10 @@ namespace BeatThat.TransformPathExt
 		/// </summary>
 		static public string Path(this Component c)
 		{
+            if(c == null) {
+                return null;
+            }
+
 			return GetPath((c is Transform)? c as Transform: c.transform);
 		}
 
@@ -22,6 +26,10 @@ namespace BeatThat.TransformPathExt
 		/// </summary>
 		static public string Path(this GameObject go)
 		{
+            if(go == null) {
+                return null;
+            }
+
 			return GetPath(go.transform);
 		}
 
@@ -30,6 +38,11 @@ namespace BeatThat.TransformPathExt
 		/// </summary>
 		static public string Path(this Transform t)
 		{
+            if (t == null)
+            {
+                return null;
+            }
+
 			return GetPath(t);
 		}
 
@@ -38,6 +51,10 @@ namespace BeatThat.TransformPathExt
 		/// </summary>
 		static public string PathFrom(this Transform t, Transform root)
 		{
+            if(t == null) {
+                return null;
+            }
+
 			return GetPathFrom(t, root);
 		}
 
@@ -46,6 +63,10 @@ namespace BeatThat.TransformPathExt
 		/// </summary>
 		public static string GetPath(Transform t)
 		{
+            if(t == null) {
+                return null;
+            }
+
 			string path = null;
 			StringBuilder b = null;
 			try {
@@ -70,6 +91,10 @@ namespace BeatThat.TransformPathExt
 
 		public static string GetPathFrom(Transform t, Transform root)
 		{
+            if(t == null) {
+                return null;
+            }
+
 			if(t == root) {
 				return "";
 			}
